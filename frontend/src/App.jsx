@@ -31,7 +31,7 @@ const App = () => {
       </Routes>
     </div>
     </div>
-  )
+  );
 }
 
 export default App
