@@ -1,16 +1,16 @@
-import p_img1 from './p_img1.png'
-import p_img2_1 from './p_img2_1.png'
-import p_img2_2 from './p_img2_2.png'
-import p_img2_3 from './p_img2_3.png'
-import p_img2_4 from './p_img2_4.png'
-import p_img3 from './p_img3.png'
-import p_img4 from './p_img4.png'
-import p_img5 from './p_img5.png'
-import p_img6 from './p_img6.png'
-import p_img7 from './p_img7.png'
-import p_img8 from './p_img8.png'
-import p_img9 from './p_img9.png'
-import p_img10 from './p_img10.png'
+import p_img1 from './i1.jpg'
+import p_img2_1 from './i2.png'
+import p_img2_2 from './i3.jpg'
+import p_img2_3 from './i4.jpg'
+import p_img2_4 from './i5.png'
+import p_img3 from './i3.jpg'
+import p_img4 from './i4.jpg'
+import p_img5 from './i14.jpg'
+import p_img6 from './i9.png'
+import p_img7 from './i10.png'
+import p_img8 from './i12.png'
+import p_img9 from './i7.jpg'
+import p_img10 from './i11.png'
 import p_img11 from './p_img11.png'
 import p_img12 from './p_img12.png'
 import p_img13 from './p_img13.png'
@@ -98,9 +98,9 @@ export const assets = {
 export const products = [
     {
         _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
+        name: "Alorah Solitaire Cushion Shape Diamond Ring",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
+        price: 40000,
         image: [p_img1],
         category: "Women",
         subCategory: "Topwear",
@@ -110,9 +110,9 @@ export const products = [
     },
     {
         _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 200,
+        price: 44000,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
         subCategory: "Topwear",
@@ -122,9 +122,9 @@ export const products = [
     },
     {
         _id: "aaaac",
-        name: "Girls Round Neck Cotton Top",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 220,
+        price: 45000,
         image: [p_img3],
         category: "Kids",
         subCategory: "Topwear",
@@ -134,9 +134,9 @@ export const products = [
     },
     {
         _id: "aaaad",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
+        price: 41000,
         image: [p_img4],
         category: "Men",
         subCategory: "Topwear",
@@ -146,9 +146,9 @@ export const products = [
     },
     {
         _id: "aaaae",
-        name: "Women Round Neck Cotton Top",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 130,
+        price: 40000,
         image: [p_img5],
         category: "Women",
         subCategory: "Topwear",
@@ -158,9 +158,9 @@ export const products = [
     },
     {
         _id: "aaaaf",
-        name: "Girls Round Neck Cotton Top",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 140,
+        price: 57000,
         image: [p_img6],
         category: "Kids",
         subCategory: "Topwear",
@@ -170,9 +170,9 @@ export const products = [
     },
     {
         _id: "aaaag",
-        name: "Men Tapered Fit Flat-Front Trousers",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 190,
+        price: 52000,
         image: [p_img7],
         category: "Men",
         subCategory: "Bottomwear",
@@ -182,9 +182,9 @@ export const products = [
     },
     {
         _id: "aaaah",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 140,
+        price: 51000,
         image: [p_img8],
         category: "Men",
         subCategory: "Topwear",
@@ -194,9 +194,9 @@ export const products = [
     },
     {
         _id: "aaaai",
-        name: "Girls Round Neck Cotton Top",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
+        price: 47000,
         image: [p_img9],
         category: "Kids",
         subCategory: "Topwear",
@@ -206,9 +206,9 @@ export const products = [
     },
     {
         _id: "aaaaj",
-        name: "Men Tapered Fit Flat-Front Trousers",
+        name: "Alorah Solitaire Cushion Shape Diamond Pendant",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
+        price: 50000,
         image: [p_img10],
         category: "Men",
         subCategory: "Bottomwear",
