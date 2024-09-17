@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
 
-const RelatedProduct = (category,subCategory) => {
+const RelatedProduct = ({category,subCategory}) => {
 
     const {products} = useContext(ShopContext);
     const [related,setRelated] = useState([]);
