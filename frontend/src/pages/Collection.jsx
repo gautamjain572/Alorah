@@ -63,7 +63,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  },[category,subCategory,search,showSearch])
+  },[category,subCategory,search,showSearch,products]) // products from backend 
 
   useEffect(() => {
     sortProduct();
@@ -81,16 +81,16 @@ const Collection = () => {
           <p className='mb-3 text-sm fomt-medium'>CATEGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory} /> Rings
+              <input className='w-3' type="checkbox" value={'Rings'} onChange={toggleCategory} /> Rings
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory} /> Earrings
+              <input className='w-3' type="checkbox" value={'Earrings'} onChange={toggleCategory} /> Earrings
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory} /> Pendants
+              <input className='w-3' type="checkbox" value={'Pendants'} onChange={toggleCategory} /> Pendants
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleCategory} /> Solitaires
+              <input className='w-3' type="checkbox" value={'Solitaires'} onChange={toggleCategory} /> Solitaires
             </p>
           </div>
         </div>
@@ -99,28 +99,28 @@ const Collection = () => {
           <p className='mb-3 text-sm fomt-medium'>SHAPE</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory} /> Cushion
+              <input className='w-3' type="checkbox" value={'Cushion'} onChange={toggleSubCategory} /> Cushion
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory} /> Emerald
+              <input className='w-3' type="checkbox" value={'Emerald'} onChange={toggleSubCategory} /> Emerald
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory} /> Heart
+              <input className='w-3' type="checkbox" value={'Heart'} onChange={toggleSubCategory} /> Heart
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleSubCategory} /> Oval
+              <input className='w-3' type="checkbox" value={'Oval'} onChange={toggleSubCategory} /> Oval
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleSubCategory} /> Pear
+              <input className='w-3' type="checkbox" value={'Pear'} onChange={toggleSubCategory} /> Pear
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleSubCategory} /> Princes Cut
+              <input className='w-3' type="checkbox" value={'Princes'} onChange={toggleSubCategory} /> Princes Cut
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleSubCategory} /> Radiant
+              <input className='w-3' type="checkbox" value={'Radiant'} onChange={toggleSubCategory} /> Radiant
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={''} onChange={toggleSubCategory} /> Arrow
+              <input className='w-3' type="checkbox" value={'Arrow'} onChange={toggleSubCategory} /> Arrow
             </p>
           </div>
         </div>
