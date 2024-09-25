@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
-  const [currentState, SetCurrentState] = useState('Sign-Up');
+  const [currentState, SetCurrentState] = useState('Login');
   const { token , setToken , navigate , backendUrl} = useContext(ShopContext)
-
+  
   const [name,setName] = useState('')
   const [password,setPassword] = useState('')
   const [email,setEmail] = useState('')
@@ -14,19 +15,39 @@ const Login = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+    // backend api login and signup
     try {
       if (currentState === 'Sign Up') {
         const responce = await axios.post(backendUrl + '/api/user/register',{name,email,password})
-        console.log(responce.data);
+        if (responce.data.success) {
+          setToken(responce.data.token)
+          localStorage.setItem('token',responce.data.token)
+        }
+        else{
+          toast.error(responce.data.message)
+        }
       }
       else{
-
+        const responce = await axios.post(backendUrl + '/api/user/login',{email,password})
+        if (responce.data.success) {
+          setToken(responce.data.token)
+          localStorage.setItem('token',responce.data.token)
+        }
+        else{
+          toast.error(responce.data.message)
+        }
       }
     } catch (error) {
-      
+        console.log(error);
+        toast.error(error.message)
     }
   }
 
+  useEffect(() => {
+    if (token) {
+      navigate('/')
+    }
+  },[token])
 
   return (
     <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800 '>
