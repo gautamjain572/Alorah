@@ -47,7 +47,7 @@ useEffect(() => {
         <div className='flex-1'>
             <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
             <div className='flex items-center gap-1 mt-2'>
-              <img src={assets.star_icon} alt="" className='w-3 5' />
+              <img src={assets.star_icon} alt="" className='w-3 5'/>
               <img src={assets.star_icon} alt="" className='w-3 5'/>
               <img src={assets.star_icon} alt="" className='w-3 5'/>
               <img src={assets.star_icon} alt="" className='w-3 5'/>

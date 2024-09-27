@@ -28,6 +28,34 @@ const PlaceOrder = () => {
     const value = event.target.value;
     setFormData(data => ({ ...data, [name]: value }))
   }
+
+  const initPay = (order) => {
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: 'Order Payment',
+      description: 'Order Payment',
+      order_id: order.id,
+      receipt: order.receipt,
+      handler: async (responce) => {
+        //console.log(responce);
+        try {
+          const {data} = await axios.post(backendUrl + '/api/order/verifyRazorpay' ,responce,{headers:{token}} )
+          if (data.success) {
+            navigate('/orders')
+            setCartItems({})
+          }
+        } catch (error) {
+          console.log(error);
+          toast.error(error)
+        }
+      }
+    }
+    const rzp = new window.Razorpay(options)
+    rzp.open()
+  }
+
   const onSubmitHnadler = async (event) => {
     event.preventDefault()
     try {
@@ -61,11 +89,22 @@ const PlaceOrder = () => {
             toast.error(responce.data.message)
           }
           break;
+
         case 'stripe':
-           const responceStripe = await axios.post(backendUrl + '/api/order/stripe', orderData, { headers: { token } })
+          const responceStripe = await axios.post(backendUrl + '/api/order/stripe', orderData, { headers: { token } })
           if (responceStripe.data.success) {
-            const {session_url} = responceStripe.data
+            const { session_url } = responceStripe.data
             window.location.replace(session_url)
+          }
+          else {
+            toast.error(responceStripe.data.message)
+          }
+          break;
+
+        case 'razorpay':
+          const responceRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, { headers: { token } })
+          if (responceRazorpay.data.success) {
+            initPay(responceRazorpay.data.order);
           }
           else {
             toast.error(responceStripe.data.message)
