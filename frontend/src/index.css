@@ -17,6 +17,16 @@ a.active hr{
     font-weight: 400;
     font-style: normal;
 }
+#slider-boxes{
+    display: flex !important;
+}
+.slick-slide > div {
+    margin: 10px;
+}
+.slick-arrow:before{
+    color: #3B5A5F;
+    font-size: 30px;
+}
 
 ::-webkit-scrollbar{
     display: none;
