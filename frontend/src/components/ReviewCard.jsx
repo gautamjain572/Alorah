@@ -86,7 +86,7 @@ const ReviewCard = () => {
         ]
     };
     return (
-        <div className='w-full m-auto mb-32'>
+        <div className='w-full m-auto mb-20'>
             <div className='text-center text-3xl py-8'>
                 <Title text1={'OUR'} text2={'REVIEWS'} />
                 <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>

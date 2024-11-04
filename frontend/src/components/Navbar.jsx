@@ -19,7 +19,6 @@ const Navbar = () => {
            <Link to='/' ><img src={assets.logo} className='w-24 mt-1' alt='logo' /></Link> 
 
             <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
-
                 <NavLink to='/' className='flex flex-col items-center gap-1'>
                     <p>HOME</p>
                     <hr className='w-2/4 border-none h-[1.7px] bg-gray-700 hidden' />

@@ -26,7 +26,6 @@ const LatestCollection = () => {
           ))
         }
       </div>
-
     </div>
   )
 }
