@@ -36,7 +36,6 @@ const loginUser = async (req, res) => {
 // route for user register
 const registerUser = async (req, res) => {
     try {
-
         const { name, email, password } = req.body;
         //checking user already exits or not
         const exists = await userModel.findOne({ email });
