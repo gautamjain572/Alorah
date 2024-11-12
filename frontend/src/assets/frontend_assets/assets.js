@@ -80,8 +80,8 @@ import ri3 from './24.jfif'
 import b1 from './Banner-2.jpg'
 import b2 from './Banner-1.jpg'
 import b3 from './Banner-3.jpg'
-
-
+import right from './right_arrow.svg'
+import left from './left_arrow.svg'
 
 export const assets = {
     logo,
@@ -102,7 +102,7 @@ export const assets = {
     razorpay_logo,
     stripe_logo,
     cross_icon,
-    ri,ri1,ri2,ri3,b1,b2,b3
+    ri,ri1,ri2,ri3,b1,b2,b3,right,left
 }
 
 export const products = [
