@@ -81,11 +81,4 @@ const singleProduct = async (req,res) => {
     }
 }
 
-const ratingProduct = async (req,res) => {
-    // const {_id } = req.user;
-    // const {star , productId} = req.body;
-    // const product = await productModel.findById(productId);
-    // let alreadyRated = product.ratings.find((userId) => )
-}
-
-export {addProduct,listProduct,removeProduct,singleProduct,ratingProduct }
+export {addProduct,listProduct,removeProduct,singleProduct }
