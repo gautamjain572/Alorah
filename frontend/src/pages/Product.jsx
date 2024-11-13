@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
 import RelatedProduct from '../components/RelatedProduct';
+import StarRating from '../components/StarRating';
 
 const Product = () => {
 
@@ -26,10 +27,11 @@ const Product = () => {
       }
     })
   }
+  
 
   useEffect(() => {
     fetchProductData();
-  }, [productId])
+  }, [productId,products])
 
   return productData ? (
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
@@ -96,6 +98,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <StarRating />
       {/* related product  */}
       <RelatedProduct category={productData.category} subCategory={productData.subCategory} />
     </div>

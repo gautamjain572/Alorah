@@ -74,15 +74,32 @@ const registerUser = async (req, res) => {
 // route for admin login
 const adminLogin = async (req, res) => {
     try {
-        
-        const {email,password} = req.body;
+
+        const { email, password } = req.body;
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-            const token = jwt.sign(email+password,process.env.JWT_SECRET)
-            res.json({success:true,token})
+            const token = jwt.sign(email + password, process.env.JWT_SECRET)
+            res.json({ success: true, token })
         }
-        else{
-            res.json({success:false,message:"Invalid credentials"})
+        else {
+            res.json({ success: false, message: "Invalid credentials" })
         }
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message })
+    }
+}
+
+const getOneUser = async (req, res) => {
+    const {token} = req.headers;
+    if (!token) {
+        return res.json({ success: false, message: 'Not Authorized Login Again' })
+    }
+    const token_decode = jwt.verify(token, process.env.JWT_SECRET)
+    const id = token_decode.id;
+    let user;
+    try {
+        user = await userModel.findById(id);
+        return res.json({ success: true, user })
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: error.message })
@@ -91,4 +108,4 @@ const adminLogin = async (req, res) => {
 
 
 
-export { loginUser, registerUser, adminLogin }
+export { loginUser, registerUser, adminLogin, getOneUser }
