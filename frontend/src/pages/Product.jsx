@@ -27,11 +27,7 @@ const Product = () => {
       }
     })
   }
-
-  console.log(productData);
   
-  
-
   useEffect(() => {
     fetchProductData();
   }, [productId,products])
@@ -101,7 +97,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <StarRating productId={productData._id} />
+      <StarRating productId={productData._id} productReview={productData.ratings} />
       {/* related product  */}
       <RelatedProduct category={productData.category} subCategory={productData.subCategory} />
     </div>
