@@ -2,15 +2,20 @@ import React, { useState, useContext, useEffect } from "react";
 import { assets } from "../assets/frontend_assets/assets";
 import { toast } from "react-toastify";
 import { ShopContext } from "../context/ShopContext";
+import axios from 'axios';
 
-const StarRating = () => {
+const StarRating = ({productId}) => {
+  const { user } = useContext(ShopContext);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [description, setDescription] = useState("");
-  const { user } = useContext(ShopContext);
   const [reviews, setReviews] = useState([]);
 
-  const submitReview = (star, des) => {
+  const token = localStorage.getItem('token');
+  const backendUrl = import.meta.env.VITE_BACKEND_URL 
+  const id = user._id
+
+  const submitReview = async (star, des) => {
     if (!star) {
       toast.error("Please Rate us Betwwen 1 to 5");
       return;
@@ -31,6 +36,15 @@ const StarRating = () => {
 
       const data = [oneReview, ...reviews];
       setReviews(data);
+
+      if (token) {
+        try {
+            await axios.post(backendUrl + '/api/addreview/review',{comment:des,rating:star,userId:id,productId})
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message)  
+        }
+    }
   };
 
   return (

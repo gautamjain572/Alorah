@@ -27,6 +27,9 @@ const Product = () => {
       }
     })
   }
+
+  console.log(productData);
+  
   
 
   useEffect(() => {
@@ -98,7 +101,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <StarRating />
+      <StarRating productId={productData._id} />
       {/* related product  */}
       <RelatedProduct category={productData.category} subCategory={productData.subCategory} />
     </div>
