@@ -64,30 +64,4 @@ const getReviewCount = async (req, res) => {
     }
 }
 
-const getReviewByUserId = async (req, res) => {
-    try {
-        const { productId } = req.body;
-        const reviews = await reviewModel.findById(productId);
-        res.json({ success: true, reviews })
-    } catch (error) {
-        console.log(error);
-        res.json({ success: false, message: error.message })
-    }
-}
-
-export const getReviewForProduct = async (req,res,next) => {
-    const id = req.body;
-    let reviews;
-    try {
-        reviews = await productModel.find({id}).populate("review")
-    } catch (error) {
-        console.log(error); 
-    }
-    if (!reviews) {
-        return res.status(500).json({message: "Internal Server Error"});
-    }
-    return res.status(200).json({ reviews });
-}
-
-
-export { addReview, getReviewCount, getReviewByUserId  }
+export { addReview, getReviewCount  }

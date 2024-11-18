@@ -4,12 +4,11 @@ import { toast } from "react-toastify";
 import { ShopContext } from "../context/ShopContext";
 import axios from 'axios';
 
-const StarRating = ({productId}) => {
+const StarRating = ({productId , productReview}) => {
   const { user } = useContext(ShopContext);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [description, setDescription] = useState("");
-  const [reviews, setReviews] = useState([]);
 
   const token = localStorage.getItem('token');
   const backendUrl = import.meta.env.VITE_BACKEND_URL 
@@ -23,19 +22,10 @@ const StarRating = ({productId}) => {
     if (!des) {
       toast.error("Please Give Us a Review");
       return;
-    } 
-    const oneReview = {
-        id: user._id,
-        name: user.name,
-        date: new Date().toISOString().slice(0, 10),
-        rStar: star,
-        description: des,
-      };
+    }
       setRating(null);
       setDescription("");
 
-      const data = [oneReview, ...reviews];
-      setReviews(data);
 
       if (token) {
         try {
@@ -104,15 +94,15 @@ const StarRating = ({productId}) => {
         <p>Customer Review :</p>
         <hr />
         <div className="mt-4 flex flex-wrap gap-3">
-          {reviews.map((item, index) => (
+          {productReview.map((item, index) => (
             <div
               key={index}
               className="flex-shrink-0 max-w-[280px] border shadow-lg rounded px-6 py-6 text-center"
             >
-              <h2 className="text-xl text-gray-700 font-medium">{item.name}</h2>
+              <h2 className="text-xl text-gray-700 font-medium">{item.comment}</h2>
               <p className="text-gray-500 mb-4 text-sm">{item.date}</p>
               <div className="flex justify-center gap-1 text-red-500 mb-4">
-                {Array.from({ length: item.rStar }, (item, index) => (
+                {Array.from({ length: item.rating }, (item, index) => (
                   <img
                     className="w-5"
                     key={index}
@@ -121,7 +111,7 @@ const StarRating = ({productId}) => {
                   />
                 ))}
               </div>
-              <p className="text-gray-600">{item.description}</p>
+              <p className="text-gray-600">{item.comment}</p>
             </div>
           ))}
         </div>
