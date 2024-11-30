@@ -8,6 +8,7 @@ import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 import reviewRouter from './routes/reviewRoute.js';
+import passport from 'passport';
 
 // App Config
 const app = express();
@@ -15,9 +16,12 @@ const port = process.env.PORT || 4000;
 connectDB()
 connectCloudinary()
 
+
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.use(passport.initialize())
+//app.use(passport.session())
 
 // api endpoints
 app.use('/api/user', userRouter)
